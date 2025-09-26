@@ -23,7 +23,7 @@ pipeline {
             steps {
                 sh '''
                 echo "🚀 Building Docker image..."
-                docker build -t $IMAGE_NAME . -f node_app/Dockerfile
+                sudo docker build -t $IMAGE_NAME . -f node_app/Dockerfile
                 '''
             }
         }
@@ -32,11 +32,11 @@ pipeline {
             steps {
                 sh '''
                 echo "🛑 Stopping old container (if exists)..."
-                docker stop $CONTAINER_NAME || true
-                docker rm $CONTAINER_NAME || true
+                sudo docker stop $CONTAINER_NAME || true
+                sudo docker rm $CONTAINER_NAME || true
 
                 echo "▶️ Running new container..."
-                docker run -d \
+                sudo docker run -d \
                   --name $CONTAINER_NAME \
                   -p $PORT:3000 \
                   $IMAGE_NAME
