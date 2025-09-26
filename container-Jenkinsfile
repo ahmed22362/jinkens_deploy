@@ -1,0 +1,56 @@
+pipeline {
+    agent { label 'container-agent' }  // use your Jenkins agent label
+
+    environment {
+        APP_NAME = "node_app"
+        IMAGE_NAME = "node_app_image"
+        CONTAINER_NAME = "node_app_container"
+        PORT = "3000"
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Clean Workspace') {
+            steps {
+                sh 'rm -rf node_modules'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                sh '''
+                echo "🚀 Building Docker image..."
+                docker build -t $IMAGE_NAME . -f node_app/Dockerfile
+                '''
+            }
+        }
+
+        stage('Deploy Container') {
+            steps {
+                sh '''
+                echo "🛑 Stopping old container (if exists)..."
+                docker stop $CONTAINER_NAME || true
+                docker rm $CONTAINER_NAME || true
+
+                echo "▶️ Running new container..."
+                docker run -d \
+                  --name $CONTAINER_NAME \
+                  -p $PORT:3000 \
+                  $IMAGE_NAME
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "✅ Node.js app deployed successfully on port $PORT"
+        }
+        failure {
+            echo "❌ Deployment failed!"
+        }
+    }
+}
