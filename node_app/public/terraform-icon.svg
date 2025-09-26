@@ -1,0 +1,6 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="32" height="32" rx="4" fill="#5C4EE5"/>
+<polygon points="8,20 12,8 20,8 24,20 20,24 12,24" fill="white"/>
+<polygon points="10,18 14,10 18,10 22,18 18,22 14,22" fill="#5C4EE5"/>
+<text x="16" y="18" text-anchor="middle" fill="white" font-size="4" font-weight="bold">TF</text>
+</svg>

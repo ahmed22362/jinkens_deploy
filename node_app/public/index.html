@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jenkins CI/CD Pipeline - DevOps Project</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img src="jenkins-icon.svg" alt="Jenkins" class="logo-icon" />
+          <span class="logo-text">Jenkins Deploy</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#pipeline" class="nav-link">Pipeline</a></li>
+          <li><a href="#deployment" class="nav-link">Deployment</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Automated CI/CD Pipeline
+            <span class="gradient-text">with Jenkins</span>
+          </h1>
+          <p class="hero-subtitle">
+            Complete DevOps solution featuring Jenkins automation, Docker
+            containerization, and AWS cloud deployment for seamless continuous
+            integration and delivery.
+          </p>
+          <div class="hero-buttons">
+            <a href="#pipeline" class="btn btn-primary">View Pipeline</a>
+            <a href="#deployment" class="btn btn-secondary">See Deployment</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="pipeline-diagram">
+            <div class="pipeline-step">
+              <img src="jenkins-icon.svg" alt="Jenkins" class="step-icon" />
+              <span>Jenkins</span>
+            </div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step">
+              <img src="docker-icon.svg" alt="Docker" class="step-icon" />
+              <span>Docker</span>
+            </div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step">
+              <img src="aws-icon.svg" alt="AWS" class="step-icon" />
+              <span>AWS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Project Features</h2>
+          <p class="section-subtitle">
+            Comprehensive DevOps implementation with modern tools and practices
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="jenkins-icon.svg" alt="Jenkins" />
+            </div>
+            <h3>Jenkins Automation</h3>
+            <p>
+              Automated build, test, and deployment pipeline configured with
+              Jenkinsfile for consistent CI/CD workflows.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="docker-icon.svg" alt="Docker" />
+            </div>
+            <h3>Docker Containerization</h3>
+            <p>
+              Containerized application with Docker agents for consistent
+              deployment across different environments.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="aws-icon.svg" alt="AWS" />
+            </div>
+            <h3>AWS Cloud Deployment</h3>
+            <p>
+              Infrastructure as Code using Terraform and automated provisioning
+              with Ansible on AWS EC2 instances.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="nodejs-icon.svg" alt="Node.js" />
+            </div>
+            <h3>Node.js Application</h3>
+            <p>
+              Express.js web server with production-ready configuration and
+              optimized Docker containerization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pipeline Section -->
+    <section id="pipeline" class="pipeline">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">CI/CD Pipeline</h2>
+          <p class="section-subtitle">
+            Automated workflow from code commit to production deployment
+          </p>
+        </div>
+        <div class="pipeline-flow">
+          <div class="pipeline-stage">
+            <div class="stage-number">1</div>
+            <h3>Source Control</h3>
+            <p>Git repository with version control and branch management</p>
+          </div>
+          <div class="pipeline-connector"></div>
+          <div class="pipeline-stage">
+            <div class="stage-number">2</div>
+            <h3>Jenkins Build</h3>
+            <p>Automated build process triggered by code commits</p>
+          </div>
+          <div class="pipeline-connector"></div>
+          <div class="pipeline-stage">
+            <div class="stage-number">3</div>
+            <h3>Docker Build</h3>
+            <p>Container image creation and registry push</p>
+          </div>
+          <div class="pipeline-connector"></div>
+          <div class="pipeline-stage">
+            <div class="stage-number">4</div>
+            <h3>AWS Deployment</h3>
+            <p>Automated deployment to AWS infrastructure</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deployment Section -->
+    <section id="deployment" class="deployment">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Infrastructure & Deployment</h2>
+          <p class="section-subtitle">
+            Modern cloud infrastructure with automation tools
+          </p>
+        </div>
+        <div class="deployment-grid">
+          <div class="deployment-item">
+            <div class="deployment-icon">
+              <img src="terraform-icon.svg" alt="Terraform" />
+            </div>
+            <h3>Terraform IaC</h3>
+            <p>
+              Infrastructure provisioning with Terraform configuration files for
+              AWS resources
+            </p>
+            <ul>
+              <li>EC2 instances</li>
+              <li>Security groups</li>
+              <li>Load balancers</li>
+            </ul>
+          </div>
+          <div class="deployment-item">
+            <div class="deployment-icon">
+              <img src="ansible-icon.svg" alt="Ansible" />
+            </div>
+            <h3>Ansible Configuration</h3>
+            <p>Automated server configuration and application deployment</p>
+            <ul>
+              <li>Server setup</li>
+              <li>Application deployment</li>
+              <li>Service configuration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Automated</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Uptime</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5min</div>
+            <div class="stat-label">Deploy Time</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Monitoring</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get Started</h2>
+          <p class="section-subtitle">
+            Ready to implement your own CI/CD pipeline?
+          </p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Project Repository</h3>
+            <p>Explore the complete source code and documentation on GitHub</p>
+            <a
+              href="https://github.com/ahmed22362/jinkens_deploy"
+              class="btn btn-primary"
+              target="_blank"
+            >
+              View on GitHub
+            </a>
+          </div>
+          <div class="contact-form">
+            <h3>Quick Start Guide</h3>
+            <div class="quick-start-steps">
+              <div class="step">
+                <span class="step-num">1</span>
+                <span>Clone the repository</span>
+              </div>
+              <div class="step">
+                <span class="step-num">2</span>
+                <span>Configure Jenkins pipeline</span>
+              </div>
+              <div class="step">
+                <span class="step-num">3</span>
+                <span>Set up AWS credentials</span>
+              </div>
+              <div class="step">
+                <span class="step-num">4</span>
+                <span>Deploy with Terraform</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img src="jenkins-icon.svg" alt="Jenkins" class="logo-icon" />
+              <span class="logo-text">Jenkins Deploy</span>
+            </div>
+            <p>
+              Automated CI/CD pipeline implementation with modern DevOps
+              practices.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Technologies</h4>
+            <ul>
+              <li>Jenkins</li>
+              <li>Docker</li>
+              <li>AWS</li>
+              <li>Terraform</li>
+              <li>Ansible</li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#pipeline">Pipeline</a></li>
+              <li>
+                <a href="https://github.com/ahmed22362/jinkens_deploy"
+                  >GitHub</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Jenkins Deploy Project. Built with ❤️ for DevOps
+            automation.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
