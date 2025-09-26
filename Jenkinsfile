@@ -4,9 +4,10 @@ node {
     }
 
     stage('Build') {
-        echo "build in progress"
+        sh 'npm i'
     }
-    stage("test"){
-        sh 'echo "this is in test stage"'
+    stage("run"){
+        sh 'echo "this is in run stage"'
+        sh 'node node_app/server.js'
     }
 }
