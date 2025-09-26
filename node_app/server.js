@@ -44,8 +44,8 @@ app.get('/health', (req, res) => {
 const port = process.env.PORT || 3000;
 
 app.listen(8081, () => {
-  console.log(`🚀 Server is running on port 8080`);
-  console.log(`📱 Open your browser and navigate to http://localhost:8080`);
-  console.log(`🔧 Health check available at http://localhost:8080/health`);
-  console.log(`📊 Project info API at http://localhost:8080/api/project-info`);
+  console.log(`🚀 Server is running on port 8081`);
+  console.log(`📱 Open your browser and navigate to http://localhost:8081`);
+  console.log(`🔧 Health check available at http://localhost:8081/health`);
+  console.log(`📊 Project info API at http://localhost:8081/api/project-info`);
 });
