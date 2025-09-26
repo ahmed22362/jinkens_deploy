@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+    stages {
+        stage('Print Branch Name') {
+            steps {
+                script {
+                    echo "Current branch: ${env.BRANCH_NAME}"
+                }
+            }
+        }
+    }
+}
