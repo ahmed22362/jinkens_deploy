@@ -1,0 +1,1 @@
+docker run -d --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v jenkins-data:/var/jenkins_home -e "JENKINS_AGENT_SSH_PUBKEY=$(cat .ssh/id_rsa.pub)" --name jenkins-docker-agent jenkins-agnet 

@@ -1,0 +1,84 @@
+---
+- name: Setup EC2 Instance
+  hosts: jenkins
+  gather_facts: false
+  become: true
+
+  vars:
+    jenkins_user: jenkins
+    jenkins_home: /home/jenkins
+    ssh_pub_key: "{{ lookup('file', '../../.ssh/id_rsa.pub') }}"
+
+  tasks:
+    - name: Update all packages
+      yum:
+        name: '*'
+        state: latest
+
+    - name: Install required packages
+      yum:
+        name:
+          - java-11-amazon-corretto
+          - git
+          - docker
+          - maven
+        state: present
+
+    - name: Add NodeSource repository
+      get_url:
+        url: https://rpm.nodesource.com/setup_18.x
+        dest: /tmp/nodesource_setup.sh
+        mode: '0755'
+
+    - name: Run NodeSource setup script
+      command: bash /tmp/nodesource_setup.sh
+
+    - name: Install Node.js
+      yum:
+        name: nodejs
+        state: present
+
+    - name: Ensure Jenkins user exists
+      user:
+        name: '{{ jenkins_user }}'
+        create_home: yes
+        home: '{{ jenkins_home }}'
+        shell: /bin/bash
+
+    - name: Create .ssh directory
+      file:
+        path: '{{ jenkins_home }}/.ssh'
+        state: directory
+        owner: '{{ jenkins_user }}'
+        group: '{{ jenkins_user }}'
+        mode: '0700'
+
+    - name: Add Jenkins master public key
+      copy:
+        content: '{{ ssh_pub_key }}'
+        dest: '{{ jenkins_home }}/.ssh/authorized_keys'
+        owner: '{{ jenkins_user }}'
+        group: '{{ jenkins_user }}'
+        mode: '0600'
+
+    - name: Ensure docker group exists
+      group:
+        name: docker
+        state: present
+
+    - name: Add jenkins user to docker group
+      user:
+        name: '{{ jenkins_user }}'
+        groups: docker
+        append: yes
+
+    - name: Add ec2-user to docker group
+      user:
+        name: ec2-user
+        groups: docker
+        append: yes
+    - name: Enable and start docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
