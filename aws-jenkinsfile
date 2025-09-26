@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'container-agent' }  // use your Jenkins agent label
+    agent { label 'aws' }  // use your Jenkins agent label
 
     environment {
         APP_NAME = "node_app"
